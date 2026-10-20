@@ -192,13 +192,13 @@ export default function Page3Letter({
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="w-full max-w-xs sm:max-w-sm mx-auto flex items-center justify-center gap-3"
+                  className="w-full max-w-sm sm:max-w-md mx-auto flex items-center justify-center gap-3"
                 >
                   {onPrev && (
                     <button
                       type="button"
                       onClick={onPrev}
-                      className="px-5 py-3 rounded-full text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer border border-white/20 bg-[#160c26]/80 text-[#d9ccdf] hover:text-[#ffffff] hover:border-white/40 shadow-md whitespace-nowrap"
+                      className="px-4 sm:px-5 py-3 rounded-full text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer border border-white/20 bg-[#160c26]/80 text-[#d9ccdf] hover:text-[#ffffff] hover:border-white/40 shadow-md whitespace-nowrap shrink-0 hover:scale-105 active:scale-95"
                     >
                       ← Kembali
                     </button>
@@ -206,7 +206,7 @@ export default function Page3Letter({
                   <button
                     type="button"
                     onClick={onNext}
-                    className="flex-1 max-w-[200px] py-3 px-6 rounded-full text-xs uppercase tracking-[0.2em] font-semibold transition-all cursor-pointer border border-[#f09cb2]/60 bg-[#160c26] text-[#ffffff] hover:bg-[#f09cb2] hover:text-[#0a0614] shadow-lg whitespace-nowrap"
+                    className="py-3 px-6 sm:px-7 rounded-full text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer border border-[#f09cb2]/60 bg-[#160c26] text-[#ffffff] hover:bg-[#f09cb2] hover:text-[#0a0614] shadow-lg whitespace-nowrap shrink-0 hover:scale-105 active:scale-95"
                   >
                     {buttonText}
                   </button>

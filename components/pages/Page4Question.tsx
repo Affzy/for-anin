@@ -11,7 +11,15 @@ export default function Page4Question({
   onYes: () => void;
   onPrev?: () => void;
 }) {
-  const { questionText, subText, yesButtonText, noButtonText, noEscapePhrases, yesMaxScale } = config.page4;
+  const {
+    questionText,
+    subText,
+    yesButtonText,
+    noButtonText,
+    noEscapePhrases,
+    yesMaxScale,
+    footerHint,
+  } = config.page4 as typeof config.page4 & { footerHint?: string };
 
   // Status apakah Yes sudah terpusat ke tengah (karena kursor diarahkan ke Yes atau No kabur)
   const [yesCentered, setYesCentered] = useState(false);
@@ -34,8 +42,8 @@ export default function Page4Question({
     setNoEscaped(true);
 
     const rect = container.getBoundingClientRect();
-    const maxX = (rect.width / 2) - 60;
-    const maxY = (rect.height / 2) - 40;
+    const maxX = rect.width / 2 - 60;
+    const maxY = rect.height / 2 - 40;
 
     // Koordinat acak baru
     const newX = (Math.random() - 0.5) * 2 * maxX;
@@ -45,7 +53,8 @@ export default function Page4Question({
     setEscapeCount((c) => c + 1);
 
     // Ganti kalimat jenaka
-    const phrase = noEscapePhrases[Math.floor(Math.random() * noEscapePhrases.length)];
+    const phrase =
+      noEscapePhrases[Math.floor(Math.random() * noEscapePhrases.length)];
     setCurrentPhrase(phrase);
 
     // Tombol Yes bertambah besar secara proporsional
@@ -132,6 +141,11 @@ export default function Page4Question({
           type="button"
           tabIndex={-1}
           aria-disabled="true"
+          onMouseEnter={escapeNoButton}
+          onClick={(e) => {
+            e.preventDefault();
+            escapeNoButton();
+          }}
           onPointerDown={(e) => {
             e.preventDefault();
             escapeNoButton();
@@ -164,7 +178,7 @@ export default function Page4Question({
           </button>
         )}
         <div className="text-xs text-[#d9ccdf]/70 tracking-wider">
-          pilih salah satu jawaban di atas
+          {footerHint || "pilih salah satu jawaban di atas yaa ^^"}
         </div>
       </div>
     </div>

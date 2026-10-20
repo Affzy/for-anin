@@ -79,6 +79,7 @@ export const config = {
     subText: "answer from your heart yaa anin :)",
     yesButtonText: "Yes",
     noButtonText: "No",
+    footerHint: "pilih salah satu jawaban di atas yaa ^^",
     // Kalimat jenaka yang berganti-ganti saat tombol No menghindar
     noEscapePhrases: [
       "kok kabur sih...",
