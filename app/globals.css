@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-night-dark: #0a0614;
+  --color-night-mid: #130a21;
+  --color-night-light: #1f1136;
+  --color-rose-dusty: #f09cb2;
+  --color-peach-warm: #fce3ce;
+  --color-text-main: #ffffff;
+  --color-text-muted: #d9ccdf;
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", -apple-system, sans-serif;
+  --font-hand: var(--font-fancy), "Great Vibes", cursive;
+  --font-fancy: var(--font-fancy), "Great Vibes", cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-night-dark);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100svh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Custom Subtle Scrollbar ─────────────────────────────────── */
+.custom-letter-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-letter-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 9999px;
+}
+.custom-letter-scroll::-webkit-scrollbar-thumb {
+  background: rgba(240, 156, 178, 0.55);
+  border-radius: 9999px;
+}
+.custom-letter-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(240, 156, 178, 0.8);
+}
+
+/* ── Deep Dark Night Gradient Animation ─────────────────────── */
+@keyframes night-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-night-bg {
+  /* Latar gelap pekat yang elegan dengan sentuhan aura ungu malam */
+  background: radial-gradient(
+    circle at 50% 20%,
+    #1c0e30 0%,
+    #0d0617 65%,
+    #07030c 100%
+  );
+  background-size: 150% 150%;
+  animation: night-shift 20s ease infinite;
+}
+
+/* ── Firefly / Starlight Animation ──────────────────────────── */
+@keyframes firefly-float {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translate(0, 0) scale(0.85);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(8px, -14px) scale(1.2);
+  }
+}
+
+.firefly-node {
+  animation: firefly-float 5s ease-in-out infinite;
+}
+
+/* ── Idle Bouquet Gentle Sway ───────────────────────────────── */
+@keyframes bouquet-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1.8deg) translateY(-2px);
+  }
+}
+
+.idle-sway {
+  animation: bouquet-sway 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* ── Pulse Hint ─────────────────────────────────────────────── */
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.soft-pulse {
+  animation: soft-pulse 2.8s ease-in-out infinite;
+}
+
+/* ── Approved Stamp Drop & Bounce ───────────────────────────── */
+@keyframes stamp-drop {
+  0% {
+    opacity: 0;
+    transform: scale(2.8) rotate(-15deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.92) rotate(-6deg);
+  }
+  85% {
+    transform: scale(1.06) rotate(-8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-8deg);
+  }
+}
+
+.stamp-effect {
+  animation: stamp-drop 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* ── Screen Shake on Stamp ──────────────────────────────────── */
+@keyframes screen-shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -1px);
+  }
+  60% {
+    transform: translate(-1px, -2px);
+  }
+  80% {
+    transform: translate(1px, 1px);
+  }
+}
+
+.screen-shake-anim {
+  animation: screen-shake 0.35s ease-in-out;
+}
+
+/* ── Reduced motion overrides ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animated-night-bg {
+    animation: none;
+  }
+  .firefly-node {
+    animation: none;
+    opacity: 0.5;
+  }
+  .idle-sway {
+    animation: none;
+  }
+  .soft-pulse {
+    animation: none;
+    opacity: 0.85;
+  }
+  .stamp-effect {
+    animation: none;
+    opacity: 1;
+    transform: rotate(-8deg);
+  }
+  .screen-shake-anim {
+    animation: none;
+  }
 }
