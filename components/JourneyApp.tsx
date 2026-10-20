@@ -15,6 +15,41 @@ export default function JourneyApp() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 6;
 
+  // ── DESKTOP SCALING: scale up the mobile-first card on desktop ──
+  const [containerStyle, setContainerStyle] = useState<React.CSSProperties>({});
+
+  useEffect(() => {
+    const updateScale = () => {
+      const w = window.innerWidth;
+      if (w >= 1280) {
+        // Large desktop: 1280px+ → scale 1.7
+        setContainerStyle({
+          transform: "scale(1.7)",
+          transformOrigin: "top center",
+        });
+      } else if (w >= 1024) {
+        // Desktop: 1024–1279px → scale 1.45
+        setContainerStyle({
+          transform: "scale(1.45)",
+          transformOrigin: "top center",
+        });
+      } else if (w >= 768) {
+        // Tablet: 768–1023px → scale 1.2
+        setContainerStyle({
+          transform: "scale(1.2)",
+          transformOrigin: "top center",
+        });
+      } else {
+        // Mobile: no transform
+        setContainerStyle({});
+      }
+    };
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
+
   // ── PENGELOLA AUDIO BACKGROUND OTOMATIS & MULUS ───────────
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -121,7 +156,10 @@ export default function JourneyApp() {
 
 
       {/* ── Konten Halaman dengan AnimatePresence (Mode: Wait) ───── */}
-      <div className="w-full max-w-[420px] sm:max-w-[480px] md:max-w-[520px] mx-auto min-h-svh flex items-center justify-center relative z-10 pt-10 pb-8 px-4 sm:scale-105 md:scale-115 lg:scale-125 transition-transform duration-300 origin-center">
+      <div
+        className="w-full max-w-[420px] mx-auto min-h-svh flex items-center justify-center relative z-10 pt-10 pb-8 px-4"
+        style={containerStyle}
+      >
         <AnimatePresence mode="wait">
           {currentPage === 1 && (
             <motion.div

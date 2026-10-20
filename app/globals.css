@@ -194,3 +194,25 @@ body {
     animation: none;
   }
 }
+
+/* ── Desktop: add extra vertical padding so scaled card doesn't clip ─ */
+@media (min-width: 768px) {
+  body {
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-top: 4rem;
+    padding-bottom: 14rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body {
+    padding-top: 6rem;
+    padding-bottom: 20rem;
+  }
+}
