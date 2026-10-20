@@ -20,14 +20,16 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   background-color: var(--color-night-dark);
   color: var(--color-text-main);
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow: hidden;
   margin: 0;
   padding: 0;
-  min-height: 100svh;
+  height: 100%;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -195,22 +197,4 @@ body {
   }
 }
 
-/* ── Desktop: zoom the mobile card up so it fills the screen ───── */
-/* CSS zoom (unlike transform:scale) affects real layout so no clipping */
-@media (min-width: 768px) {
-  .journey-card {
-    zoom: 1.25;
-  }
-}
 
-@media (min-width: 1024px) {
-  .journey-card {
-    zoom: 1.5;
-  }
-}
-
-@media (min-width: 1280px) {
-  .journey-card {
-    zoom: 1.8;
-  }
-}

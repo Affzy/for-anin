@@ -20,15 +20,15 @@ export default function Page1Cover({ onNext }: { onNext: () => void }) {
   };
 
   return (
-    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto flex flex-col items-center justify-between min-h-[580px] sm:min-h-[660px] px-4 sm:px-6 py-6 sm:py-8 text-center relative z-10">
+    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-center gap-3 sm:gap-5 py-2 text-center relative z-10">
       {/* ── BAGIAN ATAS: BUKET BUNGA MEKAR ─────────────────────────── */}
-      <div className="w-full flex-1 flex flex-col items-center justify-center pt-2">
+      <div className="w-full flex flex-col items-center justify-center">
         <BouquetIllustration isOpening={isOpening} />
       </div>
 
       {/* ── BAGIAN TENGAH: TEKS DUA BARIS DENGAN KOMBINASI FONT ELEGAN ─────── */}
       <motion.div
-        className="w-full space-y-1 my-6"
+        className="w-full space-y-1 my-2 sm:my-3"
         animate={isOpening ? { opacity: 0, y: -20, filter: "blur(4px)" } : {}}
         transition={{ duration: 0.5 }}
       >

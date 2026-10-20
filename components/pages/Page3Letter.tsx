@@ -40,7 +40,7 @@ export default function Page3Letter({
   }, [isOpen]);
 
   return (
-    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-between min-h-[620px] px-4 sm:px-6 py-6 text-center relative z-10 pb-24">
+    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-center py-2 px-4 sm:px-6 text-center relative z-10">
       <AnimatePresence mode="wait">
         {!isOpen ? (
           /* ── TAMPILAN 1: AMPLOP TERTUTUP DENGAN SEGEL TAP-TO-OPEN ── */
@@ -50,7 +50,7 @@ export default function Page3Letter({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.85, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="w-full my-auto flex flex-col items-center space-y-6"
+            className="w-full my-auto flex flex-col items-center space-y-4 sm:space-y-6 py-4"
           >
             <div className="space-y-1.5">
               <span className="text-xs tracking-[0.25em] text-[#f09cb2] uppercase font-semibold">

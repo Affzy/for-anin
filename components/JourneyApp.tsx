@@ -81,11 +81,11 @@ export default function JourneyApp() {
   };
 
   return (
-    <div className="min-h-svh w-full flex flex-col justify-between items-center relative overflow-hidden animated-night-bg">
+    <div className="fixed inset-0 w-full h-full flex flex-col justify-between items-center overflow-hidden animated-night-bg select-none">
       {/* 
         ── ELEMEN AUDIO PERSISTEN LATAR BELAKANG ──────────────────
         Audio diletakkan di root komponen ini dan loop terus berputar
-        tanpa pernah terhenti saat berpindah dari halaman 1 sampai 5!
+        tanpa pernah terhenti saat berpindah dari halaman 1 sampai 6!
       */}
       <audio
         ref={audioRef}
@@ -98,7 +98,7 @@ export default function JourneyApp() {
       <FirefliesBackground />
 
       {/* ── INDIKATOR PROGRES SLIDE HALAMAN DI BAGIAN ATAS ───────── */}
-      <div className="fixed top-7 sm:top-8 inset-x-0 flex items-center justify-center gap-1.5 z-40 pointer-events-none px-4">
+      <div className="absolute top-4 sm:top-6 inset-x-0 flex items-center justify-center gap-1.5 z-40 pointer-events-none px-4">
         {Array.from({ length: totalPages }).map((_, idx) => {
           const isActive = idx + 1 === currentPage;
           const isPassed = idx + 1 < currentPage;
@@ -120,12 +120,8 @@ export default function JourneyApp() {
         })}
       </div>
 
-
-
       {/* ── Konten Halaman dengan AnimatePresence (Mode: Wait) ───── */}
-      <div
-        className="journey-card w-full max-w-[420px] mx-auto min-h-svh flex items-center justify-center relative z-10 pt-10 pb-8 px-4"
-      >
+      <div className="w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto h-full flex items-center justify-center relative z-10 px-4 pt-12 pb-4 overflow-hidden">
         <AnimatePresence mode="wait">
           {currentPage === 1 && (
             <motion.div
@@ -134,7 +130,7 @@ export default function JourneyApp() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="w-full"
+              className="w-full flex items-center justify-center"
             >
               <Page1Cover onNext={handleNextFromCover} />
             </motion.div>
@@ -147,7 +143,7 @@ export default function JourneyApp() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="w-full"
+              className="w-full flex items-center justify-center"
             >
               <Page2Memories onNext={handleNext} onPrev={handlePrev} />
             </motion.div>
@@ -160,7 +156,7 @@ export default function JourneyApp() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="w-full"
+              className="w-full flex items-center justify-center"
             >
               <Page3Letter onNext={handleNext} onPrev={handlePrev} />
             </motion.div>
@@ -173,7 +169,7 @@ export default function JourneyApp() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="w-full"
+              className="w-full flex items-center justify-center"
             >
               <Page4Question onYes={handleNext} onPrev={handlePrev} />
             </motion.div>
@@ -186,7 +182,7 @@ export default function JourneyApp() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="w-full"
+              className="w-full flex items-center justify-center"
             >
               <Page5Certificate onRestart={handlePrev} onNext={handleNext} />
             </motion.div>
@@ -199,7 +195,7 @@ export default function JourneyApp() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="w-full"
+              className="w-full flex items-center justify-center"
             >
               <Page6Closing onRestart={handleRestart} />
             </motion.div>

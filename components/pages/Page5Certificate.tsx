@@ -72,7 +72,7 @@ export default function Page5Certificate({ onRestart, onNext }: { onRestart?: ()
 
   return (
     <div
-      className={`w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-between min-h-[660px] px-4 pt-4 pb-28 text-center relative z-10 space-y-4 ${
+      className={`w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-center py-2 px-4 text-center relative z-10 space-y-3 sm:space-y-4 ${
         shaking ? "screen-shake-anim" : ""
       }`}
     >

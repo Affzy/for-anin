@@ -74,10 +74,10 @@ export default function Page4Question({
   return (
     <div
       ref={containerRef}
-      className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-between min-h-[580px] sm:min-h-[620px] px-5 pt-6 pb-24 text-center relative z-10"
+      className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-center gap-5 sm:gap-7 py-2 px-4 text-center relative z-10"
     >
       {/* ── PERTANYAAN BESAR ELEGAN & TERANG ─────────────────── */}
-      <div className="space-y-3 pt-6">
+      <div className="space-y-2 pt-2">
         <motion.h2
           className="text-3xl sm:text-4xl font-normal text-[#ffffff] leading-tight drop-shadow-[0_2px_15px_rgba(240,156,178,0.3)]"
           style={{ fontFamily: "var(--font-serif)" }}

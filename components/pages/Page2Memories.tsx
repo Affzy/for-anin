@@ -48,10 +48,10 @@ export default function Page2Memories({
   ];
 
   return (
-    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-between min-h-[690px] sm:min-h-[740px] px-3 sm:px-4 pt-3 pb-8 text-center relative z-10 select-none">
+    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-between h-full max-h-[84vh] px-3 sm:px-4 py-2 text-center relative z-10 select-none">
       {/* ── HEADER DENGAN TEKS TAJAM TERANG ────────────────── */}
       <motion.div
-        className="space-y-1.5 relative z-0 pointer-events-none"
+        className="space-y-1 relative z-0 pointer-events-none"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -68,7 +68,7 @@ export default function Page2Memories({
       </motion.div>
 
       {/* ── AREA KANVAS POLAROID BEBAS GESER DENGAN BATAS AMAN LEGA ── */}
-      <div className="relative w-full flex-1 min-h-[460px] sm:min-h-[520px] md:min-h-[560px] flex items-center justify-center my-1 overflow-visible">
+      <div className="relative w-full flex-1 min-h-[340px] sm:min-h-[390px] flex items-center justify-center my-1 overflow-visible">
         {effectivePhotos.map((item, index) => {
           const init = initialPositions[index % initialPositions.length];
           const z = zIndices[index] || 10;
