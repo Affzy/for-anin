@@ -40,7 +40,7 @@ export default function Page3Letter({
   }, [isOpen]);
 
   return (
-    <div className="w-full max-w-sm mx-auto flex flex-col items-center justify-between min-h-[620px] px-5 py-6 text-center relative z-10 pb-24">
+    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-between min-h-[620px] px-4 sm:px-6 py-6 text-center relative z-10 pb-24">
       <AnimatePresence mode="wait">
         {!isOpen ? (
           /* ── TAMPILAN 1: AMPLOP TERTUTUP DENGAN SEGEL TAP-TO-OPEN ── */

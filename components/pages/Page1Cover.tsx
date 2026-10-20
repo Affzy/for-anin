@@ -20,7 +20,7 @@ export default function Page1Cover({ onNext }: { onNext: () => void }) {
   };
 
   return (
-    <div className="w-full max-w-sm mx-auto flex flex-col items-center justify-between min-h-[580px] sm:min-h-[640px] px-6 py-8 text-center relative z-10">
+    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto flex flex-col items-center justify-between min-h-[580px] sm:min-h-[660px] px-4 sm:px-6 py-6 sm:py-8 text-center relative z-10">
       {/* ── BAGIAN ATAS: BUKET BUNGA MEKAR ─────────────────────────── */}
       <div className="w-full flex-1 flex flex-col items-center justify-center pt-2">
         <BouquetIllustration isOpening={isOpening} />

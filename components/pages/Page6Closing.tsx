@@ -37,7 +37,7 @@ export default function Page6Closing({
   const visibleText = CLOSING_TEXT.slice(0, displayedChars);
 
   return (
-    <div className="w-full max-w-sm mx-auto flex flex-col items-center justify-center min-h-[680px] px-6 pt-8 pb-20 text-center relative z-10 space-y-10 select-none">
+    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-center min-h-[680px] px-6 pt-8 pb-20 text-center relative z-10 space-y-10 select-none">
 
       {/* ── ORNAMEN ATAS ─────────────────────────────────────── */}
       <motion.div

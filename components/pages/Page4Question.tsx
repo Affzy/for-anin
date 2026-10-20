@@ -74,7 +74,7 @@ export default function Page4Question({
   return (
     <div
       ref={containerRef}
-      className="w-full max-w-sm mx-auto flex flex-col items-center justify-between min-h-[580px] sm:min-h-[620px] px-5 pt-6 pb-24 text-center relative z-10"
+      className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-between min-h-[580px] sm:min-h-[620px] px-5 pt-6 pb-24 text-center relative z-10"
     >
       {/* ── PERTANYAAN BESAR ELEGAN & TERANG ─────────────────── */}
       <div className="space-y-3 pt-6">

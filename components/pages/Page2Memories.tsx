@@ -48,7 +48,7 @@ export default function Page2Memories({
   ];
 
   return (
-    <div className="w-full max-w-[420px] mx-auto flex flex-col items-center justify-between min-h-[690px] px-2 sm:px-3 pt-3 pb-8 text-center relative z-10 select-none">
+    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-between min-h-[690px] sm:min-h-[740px] px-3 sm:px-4 pt-3 pb-8 text-center relative z-10 select-none">
       {/* ── HEADER DENGAN TEKS TAJAM TERANG ────────────────── */}
       <motion.div
         className="space-y-1.5 relative z-0 pointer-events-none"
@@ -57,18 +57,18 @@ export default function Page2Memories({
         transition={{ duration: 0.6 }}
       >
         <h2
-          className="text-2xl sm:text-3xl font-normal text-[#ffffff] drop-shadow-sm"
+          className="text-2xl sm:text-3xl md:text-4xl font-normal text-[#ffffff] drop-shadow-sm"
           style={{ fontFamily: "var(--font-serif)" }}
         >
           {title}
         </h2>
-        <p className="text-xs sm:text-sm text-[#d9ccdf] font-light leading-relaxed">
+        <p className="text-xs sm:text-sm md:text-base text-[#d9ccdf] font-light leading-relaxed">
           {subtitle}
         </p>
       </motion.div>
 
       {/* ── AREA KANVAS POLAROID BEBAS GESER DENGAN BATAS AMAN LEGA ── */}
-      <div className="relative w-full flex-1 min-h-[460px] sm:min-h-[490px] flex items-center justify-center my-1 overflow-visible">
+      <div className="relative w-full flex-1 min-h-[460px] sm:min-h-[520px] md:min-h-[560px] flex items-center justify-center my-1 overflow-visible">
         {effectivePhotos.map((item, index) => {
           const init = initialPositions[index % initialPositions.length];
           const z = zIndices[index] || 10;
@@ -78,10 +78,10 @@ export default function Page2Memories({
               key={index}
               drag
               dragConstraints={{
-                left: -120,
-                right: 120,
-                top: -150,
-                bottom: 150,
+                left: -150,
+                right: 150,
+                top: -170,
+                bottom: 170,
               }}
               dragElastic={0.12}
               dragMomentum={false}
@@ -103,7 +103,7 @@ export default function Page2Memories({
                 zIndex: z,
                 touchAction: "none",
               }}
-              className="absolute w-[185px] sm:w-[200px] p-3 pb-4 rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.85)] border border-white/20 bg-[#160c26]/95 backdrop-blur-xl cursor-grab active:cursor-grabbing hover:border-[#f09cb2]/60 transition-colors"
+              className="absolute w-[190px] sm:w-[220px] md:w-[240px] p-3 sm:p-3.5 pb-4 sm:pb-5 rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.85)] border border-white/20 bg-[#160c26]/95 backdrop-blur-xl cursor-grab active:cursor-grabbing hover:border-[#f09cb2]/60 transition-colors"
             >
               {/* Frame Foto */}
               <div className="w-full aspect-square rounded-xl bg-linear-to-br from-[#24133b] to-[#0d0617] relative overflow-hidden flex items-center justify-center border border-white/10 pointer-events-none">
