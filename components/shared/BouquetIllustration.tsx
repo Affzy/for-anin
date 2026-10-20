@@ -57,12 +57,16 @@ export default function BouquetIllustration({ isOpening = false }: { isOpening?:
   const particles = useMemo(() => generateParticles(PARTICLE_COUNT), []);
 
   return (
-    <div className="relative w-52 h-64 sm:w-60 sm:h-72 select-none mx-auto flex items-center justify-center overflow-visible">
+    <div
+      className="relative w-52 h-64 sm:w-60 sm:h-72 select-none mx-auto flex items-center justify-center overflow-visible"
+      style={{ maxWidth: "240px", maxHeight: "288px", width: "100%" }}
+    >
 
       {/* ── The bouquet SVG (hides when exploding) ─────────────────── */}
       <motion.svg
         viewBox="0 0 240 300"
         className="w-full h-full idle-sway drop-shadow-[0_10px_25px_rgba(232,160,180,0.15)]"
+        style={{ maxWidth: "240px", maxHeight: "288px" }}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         animate={

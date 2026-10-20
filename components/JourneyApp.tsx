@@ -121,7 +121,10 @@ export default function JourneyApp() {
 
 
       {/* ── Konten Halaman dengan AnimatePresence (Mode: Wait) ───── */}
-      <div className="w-full max-w-[420px] mx-auto min-h-svh flex items-center justify-center relative z-10 pt-12 pb-6">
+      <div
+        className="w-full max-w-[420px] mx-auto min-h-svh flex items-center justify-center relative z-10 pt-12 pb-6 px-4"
+        style={{ maxWidth: "420px", width: "100%" }}
+      >
         <AnimatePresence mode="wait">
           {currentPage === 1 && (
             <motion.div
