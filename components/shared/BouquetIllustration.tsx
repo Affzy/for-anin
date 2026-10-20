@@ -58,15 +58,15 @@ export default function BouquetIllustration({ isOpening = false }: { isOpening?:
 
   return (
     <div
-      className="relative w-56 h-68 sm:w-64 sm:h-76 md:w-72 md:h-84 select-none mx-auto flex items-center justify-center overflow-visible"
-      style={{ maxWidth: "320px", maxHeight: "380px", width: "100%" }}
+      className="relative w-[240px] h-[280px] sm:w-[270px] sm:h-[310px] select-none mx-auto flex items-center justify-center overflow-visible"
+      style={{ maxWidth: "280px", maxHeight: "320px", width: "100%" }}
     >
 
       {/* ── The bouquet SVG (hides when exploding) ─────────────────── */}
       <motion.svg
         viewBox="0 0 240 300"
         className="w-full h-full idle-sway drop-shadow-[0_10px_25px_rgba(232,160,180,0.15)]"
-        style={{ maxWidth: "320px", maxHeight: "380px" }}
+        style={{ width: "100%", height: "100%" }}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         animate={
