@@ -48,10 +48,10 @@ export default function Page2Memories({
   ];
 
   return (
-    <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto flex flex-col items-center justify-between h-full max-h-[84vh] px-3 sm:px-4 py-2 text-center relative z-10 select-none">
+    <div className="w-full max-w-lg md:max-w-xl mx-auto flex flex-col items-center justify-center py-2 px-4 text-center relative z-10 select-none">
       {/* ── HEADER DENGAN TEKS TAJAM TERANG ────────────────── */}
       <motion.div
-        className="space-y-1 relative z-0 pointer-events-none"
+        className="space-y-1.5 relative z-0 pointer-events-none mb-3 sm:mb-5"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -68,7 +68,7 @@ export default function Page2Memories({
       </motion.div>
 
       {/* ── AREA KANVAS POLAROID BEBAS GESER DENGAN BATAS AMAN LEGA ── */}
-      <div className="relative w-full flex-1 min-h-[340px] sm:min-h-[390px] flex items-center justify-center my-1 overflow-visible">
+      <div className="relative w-full h-[360px] sm:h-[400px] flex items-center justify-center my-3 sm:my-4 overflow-visible">
         {effectivePhotos.map((item, index) => {
           const init = initialPositions[index % initialPositions.length];
           const z = zIndices[index] || 10;
@@ -131,14 +131,14 @@ export default function Page2Memories({
         })}
 
         {/* Petunjuk Interaktif Drag Bebas */}
-        <span className="absolute bottom-0 text-[11px] tracking-widest text-[#fce3ce] font-medium uppercase soft-pulse pointer-events-none">
+        <span className="absolute -bottom-2 text-[11px] sm:text-xs tracking-widest text-[#fce3ce] font-medium uppercase soft-pulse pointer-events-none">
           geser & atur fotonya sesuka hati 🖐️
         </span>
       </div>
 
       {/* ── TOMBOL NAVIGASI: KEMBALI & LANJUT ────────────────── */}
       <motion.div
-        className="w-full pt-3 relative z-20 flex items-center gap-2.5"
+        className="w-full max-w-xs sm:max-w-sm mx-auto pt-4 relative z-20 flex items-center justify-center gap-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
@@ -147,7 +147,7 @@ export default function Page2Memories({
           <button
             type="button"
             onClick={onPrev}
-            className="px-5 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer border border-white/20 bg-[#160c26]/80 text-[#d9ccdf] hover:text-[#ffffff] hover:border-white/40 shadow-md"
+            className="px-5 py-3 rounded-full text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer border border-white/20 bg-[#160c26]/80 text-[#d9ccdf] hover:text-[#ffffff] hover:border-white/40 shadow-md whitespace-nowrap"
           >
             ← Kembali
           </button>
@@ -155,7 +155,7 @@ export default function Page2Memories({
         <button
           type="button"
           onClick={onNext}
-          className="flex-1 py-3.5 rounded-full text-xs uppercase tracking-[0.2em] font-semibold transition-all cursor-pointer border border-[#f09cb2]/60 bg-[#160c26] text-[#ffffff] hover:bg-[#f09cb2] hover:text-[#0a0614] shadow-lg"
+          className="flex-1 max-w-[200px] py-3 px-6 rounded-full text-xs uppercase tracking-[0.2em] font-semibold transition-all cursor-pointer border border-[#f09cb2]/60 bg-[#160c26] text-[#ffffff] hover:bg-[#f09cb2] hover:text-[#0a0614] shadow-lg whitespace-nowrap"
         >
           {buttonText}
         </button>
