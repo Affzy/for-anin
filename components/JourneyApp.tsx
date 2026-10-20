@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { config } from "@/src/config/content";
 import FirefliesBackground from "./shared/FirefliesBackground";
@@ -20,15 +20,21 @@ export default function JourneyApp() {
   // ── PENGELOLA AUDIO BACKGROUND OTOMATIS & MULUS ───────────
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.5; // Atur volume default 50%
+    }
+  }, []);
+
   // Fungsi memutar audio secara otomatis saat tombol "Buka" ditekan di Page 1
   const startMusic = () => {
     if (audioRef.current) {
       audioRef.current.muted = false;
-      audioRef.current.volume = 1.0;
+      audioRef.current.volume = 0.5; // Turunkan volume 50% agar lembut dan tidak mengejutkan
       audioRef.current
         .play()
         .then(() => {
-          console.log("Audio started successfully");
+          console.log("Audio started successfully at 50% volume");
         })
         .catch((err) => {
           console.error("Audio playback error:", err);
