@@ -195,24 +195,22 @@ body {
   }
 }
 
-/* ── Desktop: add extra vertical padding so scaled card doesn't clip ─ */
+/* ── Desktop: zoom the mobile card up so it fills the screen ───── */
+/* CSS zoom (unlike transform:scale) affects real layout so no clipping */
 @media (min-width: 768px) {
-  body {
-    padding-top: 2rem;
-    padding-bottom: 8rem;
+  .journey-card {
+    zoom: 1.25;
   }
 }
 
 @media (min-width: 1024px) {
-  body {
-    padding-top: 4rem;
-    padding-bottom: 14rem;
+  .journey-card {
+    zoom: 1.5;
   }
 }
 
 @media (min-width: 1280px) {
-  body {
-    padding-top: 6rem;
-    padding-bottom: 20rem;
+  .journey-card {
+    zoom: 1.8;
   }
 }
